@@ -12,7 +12,9 @@ body {
 header {
   margin-bottom: 30px;
 }
-
+.buttom{
+  padding-top: 10px;
+}
 .temp{
   cursor:pointer;
   color:#006dcc;
@@ -25,7 +27,7 @@ h1 {
 }
 
 .all-icon {
-  margin-bottom: 20px;
+  padding-top: 100px;
 }
 
 div.hide {

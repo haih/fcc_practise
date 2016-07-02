@@ -2,15 +2,17 @@
 <head>
   <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700,400' rel='stylesheet' type='text/css'>
   <link href='https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css' rel='stylesheet' type='text/css'>
-  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-  <link href='./weather.css' rel='stylesheet' type='text/css'>
+  <!-- <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css' rel='stylesheet' type='text/css'> -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+  <link href='./css/weather.css' rel='stylesheet' type='text/css'>
   
   <script type="text/javascript"  src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript"  src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
   <script src="./weather.js"></script>
 </head> 
 <body ng-app="Weather">
-  <div class="container" ng-controller="MainCtrl">
+  <div class="container" ng-controller="MainCtrl as mainctrl">
     <div class="row">
       <header class="col-xs-12 text-center">
         <h1>Free C<i class="wi wi-day-sunny"></i>de Camp </h1>
@@ -19,11 +21,10 @@
 
       <div class="col-xs-8 col-xs-offset-2">
         <div class="text-center status">
-          <p>{{Data.city}}, {{Data.country}}</p>
-          <p>{{Data.temp}} &#176;<span class="temp" ng-click="Data.sys()">{{Data.unit}}</span></p>
-          <p>{{Data.des}}</p>
+          <p>{{mainctrl.Data.city}}, {{mainctrl.Data.country}}</p>
+          <p>{{mainctrl.Data.temp}} &#176;<span class="temp" ng-click="Data.sys()">{{mainctrl.Data.unit}}</span></p>
+          <p>{{mainctrl.Data.des}}</p>
         </div>
-
         <div class="text-center all-icon">
           <div class="icon sun-shower hide ">
             <div class="cloud"></div>
@@ -58,10 +59,10 @@
           <div class="icon rainy hide rain">
             <div class="cloud"></div>
             <div class="rain"></div>
-          </div>
+          </div> 
         </div>
 
-        <p class="text-center">Inspired By <a href="http://codepen.io/haih/full/xOdmoA/" target="_blank">haih</a></p>
+        <p class="text-center buttom">Inspired By <a href="http://codepen.io/haih/full/xOdmoA/" target="_blank">haih</a></p>
       </div>
     </div>
   </div>

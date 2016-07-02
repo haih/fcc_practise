@@ -17,66 +17,67 @@ app.factory('WeatherApi', function($http) {
   return obj
 });
 
-app.controller('MainCtrl', function($scope, WeatherApi) {
-  $scope.Data = {};
-  $scope.Data.unit ='C';
-  $scope.Data.sysChange = false;
+app.controller('MainCtrl', function(WeatherApi) {
+  var vm = this;
+  vm.Data = {};
+  vm.Data.unit ='C';
+  vm.Data.sysChange = false;
   WeatherApi.getLoc().success(function(data) {
     var city = data.city + ',' + data.country;
-    $scope.Data.city = data.city;
-    $scope.Data.country = data.country;
+    vm.Data.city = data.city;
+    vm.Data.country = data.country;
     WeatherApi.getCurrent(city).success(function(data) {
       CurrentWeather(data)
     });
   });
 
   function CurrentWeather(data) {
-    $scope.Data.temp = Math.round(data.main.temp);
-    $scope.Data.Cel = Math.round(data.main.temp);
-    $scope.Data.des = data.weather[0].main;
-    $scope.Data.Fah = Math.round( ($scope.Data.temp * 9)/5 + 32 );
-    return IconGen($scope.Data.des);
+    vm.Data.temp = Math.round(data.main.temp);
+    vm.Data.Cel = Math.round(data.main.temp);
+    vm.Data.des = data.weather[0].main;
+    vm.Data.Fah = Math.round( (vm.Data.temp * 9)/5 + 32 );
+    return IconGen(vm.Data.des);
   }
 
-  function IconGen(city) {
-    var city = city.toLowerCase()
-    switch (city) {
+  function IconGen(weather) {
+    var weather = weather.toLowerCase()
+    switch (weather) {
       case 'dizzle':
-        addIcon(city)
+        addIcon(weather)
         break;
       case 'clouds':
-        addIcon(city)
+        addIcon(weather)
         break;
       case 'rain':
-        addIcon(city)
+        addIcon(weather)
         break;
       case 'snow':
-        addIcon(city)
+        addIcon(weather)
         break;
       case 'clear':
-        addIcon(city)
+        addIcon(weather)
         break;
       case 'thunderstom':
-        addIcon(city)
+        addIcon(weather)
         break;
       default:
     $('div.clouds').removeClass('hide');
     }
   }
 
-  function addIcon(city) {
-    $('div.' + city).removeClass('hide');
+  function addIcon(weather) {
+    $('div.' + weather).removeClass('hide');
   }
   
-  $scope.Data.sys= function(){
-   if($scope.Data.sysChange){
-     $scope.Data.unit ='C';
-     $scope.Data.temp = $scope.Data.Cel;
-     return $scope.Data.sysChange = false;
+  vm.Data.sys= function(){
+   if(vm.Data.sysChange){
+     vm.Data.unit ='C';
+     vm.Data.temp = vm.Data.Cel;
+     return vm.Data.sysChange = false;
      }
-    $scope.Data.unit ='F';
-    $scope.Data.temp = $scope.Data.Fah;
-    return $scope.Data.sysChange = true;
+    vm.Data.unit ='F';
+    vm.Data.temp = vm.Data.Fah;
+    return vm.Data.sysChange = true;
   } 
   
 });
