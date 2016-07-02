@@ -77,7 +77,6 @@ app.controller('MainCtrl', function($scope, WeatherApi) {
     $scope.Data.unit ='F';
     $scope.Data.temp = $scope.Data.Fah;
     return $scope.Data.sysChange = true;
-  }
-  
+  } 
   
 });
