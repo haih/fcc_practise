@@ -1,14 +1,21 @@
-<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-<link rel="stylesheet" type="text/css" href="./search.css"> 
-<!-- <script type="text/javascript" src="./search.js"></script> -->
-<h3>
-	<p>Try typing 
-		<i>anything</i> 
-		and press enter.
-	</p>
-</h3>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script type="text/javascript"  src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./search.css"> 
+  <script type="text/javascript" src="./search.js"></script> 
+</head>
+<body ng-app="wikiViewer" ng-controller="MainCtrl as mainctrl">
+  <div id='title'>
+  	<p>Click the icon and typing 
+  		<i>{{mainctrl.title}}</i> 
+  		you want to search.
+  	</p>
+  </div>
 
-<form id="center">
-    <input id="search" type="search" name="search" />
-    <p></p>
-</form>
+  <form id="center">
+      <input id="search" type="search" name="search" />
+      <p></p>
+  </form>
+</body>
+</html>

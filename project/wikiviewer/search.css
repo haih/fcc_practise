@@ -1,9 +1,9 @@
 #search {
     border: 4px solid #999;
     cursor: pointer;
-    height: 10px;
+    height: 30px;
     padding: 8px;
-    width: 10px;  
+    width: 30px;  
     border-radius: 50px;
 }
  
@@ -15,11 +15,11 @@
     -webkit-transition: all .2s ease-in-out;
 }
 #search:hover {   
-    border-color: #199ed9;
+    border-color: #099ed9;
 }
 #search:focus {   
-    border-color: #199ed9;
-    background-color:yellow;
+    border-color: #099ed9;
+    background-color:grey;
     outline: none;
     width: 180px;
     
@@ -33,11 +33,15 @@ form {
     position: relative;
 }
 
-h3 {
-    color: #888;
-    font-size: 20px;
+#title {
+    color: white;
+    font-size: 30px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    margin: 100px 100px 50px;
+    margin: 50px 100px 10px;
     
     -webkit-font-smoothing: antialiased;
+}
+
+body{
+    background-color: #04b8ad
 }
