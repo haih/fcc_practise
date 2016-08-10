@@ -1,21 +1,26 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-  <script type="text/javascript"  src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./search.css"> 
-  <script type="text/javascript" src="./search.js"></script> 
-</head>
-<body ng-app="wikiViewer" ng-controller="MainCtrl as mainctrl">
-  <div id='title'>
-  	<p>Click the icon and typing 
-  		<i>{{mainctrl.title}}</i> 
-  		you want to search.
-  	</p>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wiki Viewer</title>
+    <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
 
-  <form id="center">
-      <input id="search" type="search" name="search" />
-      <p></p>
-  </form>
-</body>
+    <script type="text/javascript" src="search.js"></script>
+    <link rel="stylesheet" type="text/css" href="search.css">
+  </head>
+  <body>
+    <form>
+      <h1>Wiki Viewer</h1>
+      <div>
+        <input id="search"/>
+        
+    </div>
+      <div>
+        <span>If you want to do a random serach, please click below button:</span></br>
+        <input id="randomButton" type="button" onclick=RandomWindow(); value="Random Search" />
+        </input>
+      </div>
+      <div id="results"></div>
+    </form>
+  </body>
 </html>
