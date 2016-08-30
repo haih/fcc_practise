@@ -1,0 +1,44 @@
+
+body {
+  margin: 10px;
+}
+
+h4{
+  margin: 10px
+}
+.container {
+  background-color: #e1e1e6;
+  margin: 0px auto;
+  padding: 0px;
+  max-width: 700px;
+}
+
+.row {
+  margin: 2px 0px;
+  padding: 5px;
+  line-height: 50px;
+}
+
+.logo {
+  max-width: 50px;
+  max-height: 50px;
+  border-radius: 50%;
+  border: 3px solid #e1e1e6;
+}
+
+
+#disc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+#title {
+  display: block;
+  text-align: center;
+  background-color: #fff1ef;
+  padding:1px;
+}
+
